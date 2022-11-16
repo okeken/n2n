@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import { Line } from 'vue-chartjs/legacy'
+import Vue from "vue";
+import { Line } from "vue-chartjs/legacy";
 import {
   Chart as ChartJS,
   Title,
@@ -9,8 +9,8 @@ import {
   CategoryScale,
   LinearScale,
   LineElement,
-  PointElement
-} from 'chart.js'
+  PointElement,
+} from "chart.js";
 
 ChartJS.register(
   Title,
@@ -21,8 +21,8 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   LineElement
-)
+);
 
-Vue.component('line-chartjs', {
-  extends: Line
-})
+Vue.component("line-chartjs", {
+  extends: Line,
+});

@@ -1,13 +1,17 @@
 <template>
   <div>
+    <button @click="increment">increase</button>
+    {{ counter }}
     <line-chartjs :chart-data="chartData" :chart-options="chartOptions" />
   </div>
 </template>
 
 <script>
+import { ref } from "@nuxtjs/composition-api";
 export default {
   name: "IndexPage",
   setup() {
+    const counter = ref(0);
     const chartData = {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [
@@ -23,7 +27,11 @@ export default {
       responsive: true,
       maintainAspectRatio: false,
     };
-    return { chartData, chartOptions };
+
+    const increment = () => {
+      counter.value = counter.value + 1;
+    };
+    return { chartData, chartOptions, counter, increment };
   },
 };
 </script>
